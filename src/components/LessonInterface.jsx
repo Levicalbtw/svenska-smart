@@ -308,7 +308,7 @@ export default function LessonInterface({ levelId, moduleId, onBack }) {
                                         disabled={isCorrect !== null}
                                         title="Click to remove"
                                     >
-                                        {word} {isCorrect === null && <span style={{ marginLeft: '4px', opacity: 0.5, fontSize: '0.75rem' }}>✕</span>}
+                                        {word}
                                     </button>
                                 ))}
                             </div>
