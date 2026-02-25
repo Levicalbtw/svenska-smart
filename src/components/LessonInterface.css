@@ -182,6 +182,18 @@
     box-shadow: var(--shadow-glow-sm);
 }
 
+.word-btn.placed-word {
+    background: rgba(254, 204, 2, 0.12);
+    border-color: rgba(254, 204, 2, 0.5);
+    color: var(--primary-accent);
+}
+
+.word-btn.placed-word:hover:not(:disabled) {
+    background: rgba(248, 81, 73, 0.12);
+    border-color: rgba(248, 81, 73, 0.5);
+    color: #ff7b72;
+}
+
 .feedback-banner {
     margin-top: 1.5rem;
     padding: 0.85rem 1.25rem;

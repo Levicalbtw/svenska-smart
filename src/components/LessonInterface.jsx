@@ -31,6 +31,23 @@ function pickWrongAnswers(correctAnswer, pool, count = 3) {
     return shuffled.slice(0, count);
 }
 
+// Common Swedish words used as distractors in grammar builders
+const DISTRACTOR_POOL = [
+    'inte', 'mycket', 'här', 'där', 'alla', 'ingen', 'hon', 'han',
+    'den', 'det', 'vi', 'de', 'mitt', 'din', 'sin', 'kan', 'ska',
+    'vill', 'har', 'var', 'när', 'hur', 'vad', 'som', 'för', 'med',
+    'till', 'av', 'på', 'om', 'men', 'och', 'så', 'nu', 'att',
+    'sedan', 'bara', 'redan', 'aldrig', 'alltid', 'ofta', 'snabbt',
+    'hemma', 'ute', 'bra', 'stor', 'liten', 'ny', 'gammal'
+];
+
+function pickDistractors(correctParts, count = 2) {
+    const correctSet = new Set(correctParts.map(p => p.replace(/[.,!?]/g, '').toLowerCase()));
+    const candidates = DISTRACTOR_POOL.filter(w => !correctSet.has(w.toLowerCase()));
+    const shuffled = [...candidates].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+}
+
 export default function LessonInterface({ levelId, moduleId, onBack }) {
     const { updateProgress, addXp } = useCourse();
     const moduleData = courseStructure[levelId].modules.find(m => m.id === moduleId);
@@ -68,7 +85,9 @@ export default function LessonInterface({ levelId, moduleId, onBack }) {
             setShuffledOptions(options.sort(() => Math.random() - 0.5));
         } else if (currentItem?.type === 'grammar_builder') {
             setUserSentence([]);
-            setAvailableParts([...currentItem.parts].sort(() => Math.random() - 0.5));
+            const distractors = pickDistractors(currentItem.parts, 2);
+            const allParts = [...currentItem.parts, ...distractors];
+            setAvailableParts(allParts.sort(() => Math.random() - 0.5));
         }
     }, [currentIndex, currentItem, translationPool]);
 
@@ -236,7 +255,6 @@ export default function LessonInterface({ levelId, moduleId, onBack }) {
 
         if (currentItem.type === 'grammar_builder') {
 
-
             const handleWordClick = (word, index) => {
                 if (isCorrect !== null) return;
 
@@ -246,19 +264,30 @@ export default function LessonInterface({ levelId, moduleId, onBack }) {
                 const newParts = [...availableParts];
                 newParts.splice(index, 1);
                 setAvailableParts(newParts);
+            };
 
-                // Check completion when all words are used
-                if (newParts.length === 0) {
-                    const result = newUserSentence.join(' ') === currentItem.parts.join(' ');
-                    setIsCorrect(result);
-                    if (result) {
-                        addXp(15);
-                        setCorrectCount(prev => prev + 1);
-                    } else {
-                        setWrongItems(prev => [...prev, currentItem]);
-                    }
+            const handleRemoveWord = (word, index) => {
+                if (isCorrect !== null) return;
+
+                const newUserSentence = [...userSentence];
+                newUserSentence.splice(index, 1);
+                setUserSentence(newUserSentence);
+
+                setAvailableParts(prev => [...prev, word]);
+            };
+
+            const handleSubmitSentence = () => {
+                const result = userSentence.join(' ') === currentItem.parts.join(' ');
+                setIsCorrect(result);
+                if (result) {
+                    addXp(15);
+                    setCorrectCount(prev => prev + 1);
+                } else {
+                    setWrongItems(prev => [...prev, currentItem]);
                 }
             };
+
+            const allWordsPlaced = userSentence.length >= currentItem.parts.length;
 
             return (
                 <div className="syntax-view animate-fade-in">
@@ -266,8 +295,24 @@ export default function LessonInterface({ levelId, moduleId, onBack }) {
                     <p className="scenario-text">Translate: <strong>{currentItem.english}</strong></p>
                     {currentItem.note && <p className="hint-text">Hint: {currentItem.note}</p>}
 
-                    <div className="drop-zone glass-panel">
-                        {userSentence.length === 0 ? "Tap words below to form sentence..." : userSentence.join(' ')}
+                    <div className="drop-zone glass-panel" style={{ minHeight: '60px' }}>
+                        {userSentence.length === 0 ? (
+                            <span style={{ color: 'var(--text-muted)' }}>Tap words below to form sentence...</span>
+                        ) : (
+                            <div className="word-bank" style={{ justifyContent: 'flex-start' }}>
+                                {userSentence.map((word, i) => (
+                                    <button
+                                        key={i}
+                                        className="word-btn placed-word"
+                                        onClick={() => handleRemoveWord(word, i)}
+                                        disabled={isCorrect !== null}
+                                        title="Click to remove"
+                                    >
+                                        {word} {isCorrect === null && <span style={{ marginLeft: '4px', opacity: 0.5, fontSize: '0.75rem' }}>✕</span>}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
 
                     <div className="word-bank">
@@ -282,6 +327,16 @@ export default function LessonInterface({ levelId, moduleId, onBack }) {
                             </button>
                         ))}
                     </div>
+
+                    {allWordsPlaced && isCorrect === null && (
+                        <button
+                            className="btn btn-primary animate-fade-in"
+                            onClick={handleSubmitSentence}
+                            style={{ marginTop: '1.5rem', padding: '0.8rem 2rem', fontSize: '1rem' }}
+                        >
+                            Submit Answer
+                        </button>
+                    )}
 
                     {isCorrect !== null && (
                         <div className={`feedback-banner ${isCorrect ? 'correct-banner' : 'incorrect-banner'}`}>
