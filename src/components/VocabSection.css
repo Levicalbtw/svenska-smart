@@ -54,7 +54,7 @@
 
 .filter-pill:hover,
 .filter-pill.active {
-    background: rgba(88, 166, 255, 0.15);
+    background: rgba(254, 204, 2, 0.15);
     color: var(--primary-accent);
     border-color: var(--primary-accent);
 }
@@ -75,7 +75,7 @@
 
 .vocab-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(88, 166, 255, 0.4);
+    border-color: rgba(254, 204, 2, 0.4);
     box-shadow: var(--shadow-sm);
 }
 

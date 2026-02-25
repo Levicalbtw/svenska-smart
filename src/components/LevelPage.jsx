@@ -72,7 +72,7 @@ export default function LevelPage({ levelId, onBack, onStartLesson }) {
                                 transition: 'all 0.3s ease',
                                 borderLeft: active ? '4px solid var(--primary-accent)' : '1px solid var(--border-color)',
                                 opacity: unlocked ? 1 : 0.5,
-                                background: active ? 'rgba(88, 166, 255, 0.05)' : undefined
+                                background: active ? 'rgba(254, 204, 2, 0.05)' : undefined
                             }}
                         >
                             <div className="module-status" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem' }}>
@@ -89,7 +89,7 @@ export default function LevelPage({ levelId, onBack, onStartLesson }) {
                                 <h3 style={{ marginBottom: '0.5rem', color: '#fff', fontSize: '1.2rem' }}>{mod.title}</h3>
                                 <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', fontSize: '0.95rem' }}>{mod.description || "Unlock to see details."}</p>
                                 <span className="module-type-badge" style={{
-                                    background: 'rgba(88, 166, 255, 0.1)',
+                                    background: 'rgba(254, 204, 2, 0.1)',
                                     color: 'var(--primary-accent)',
                                     padding: '0.3rem 0.8rem',
                                     borderRadius: '20px',

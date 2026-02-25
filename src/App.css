@@ -24,7 +24,7 @@ header {
 .logo {
   font-size: 1.4rem;
   font-weight: 800;
-  background: var(--primary-gradient);
+  background: linear-gradient(135deg, #FECC02 0%, #ffe066 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
@@ -82,7 +82,7 @@ main {
   transform: translateX(-50%);
   width: 600px;
   height: 400px;
-  background: radial-gradient(circle, rgba(88, 166, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(254, 204, 2, 0.08) 0%, transparent 70%);
   z-index: 0;
   pointer-events: none;
 }
@@ -94,7 +94,7 @@ main {
   right: -10%;
   width: 400px;
   height: 300px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 106, 167, 0.06) 0%, transparent 70%);
   z-index: 0;
   pointer-events: none;
 }
@@ -107,7 +107,7 @@ main {
 .hero-title {
   font-size: 2.8rem;
   margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, #ffffff 0%, var(--primary-accent) 60%, #a78bfa 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #FECC02 60%, #006AA7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -160,7 +160,7 @@ main {
 .module-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(88, 166, 255, 0.4);
+  border-color: rgba(254, 204, 2, 0.4);
 }
 
 .module-card:hover::before {
@@ -200,8 +200,8 @@ main {
   font-weight: 700;
   margin: 1.5rem 0;
   padding: 1.25rem 2.5rem;
-  background: rgba(88, 166, 255, 0.08);
-  border: 1px solid rgba(88, 166, 255, 0.15);
+  background: rgba(254, 204, 2, 0.08);
+  border: 1px solid rgba(254, 204, 2, 0.15);
   border-radius: var(--radius-md);
   color: #fff;
   letter-spacing: 0.5px;
@@ -230,7 +230,7 @@ main {
 
 .ai-tutor-fab:hover {
   transform: scale(1.12);
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(88, 166, 255, 0.35);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(254, 204, 2, 0.35);
 }
 
 .ai-tutor-fab:active {

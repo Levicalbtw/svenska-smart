@@ -40,7 +40,7 @@
     align-items: center;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    border: 2px solid rgba(88, 166, 255, 0.2);
+    border: 2px solid rgba(254, 204, 2, 0.2);
 }
 
 .flashcard-front {
@@ -72,7 +72,7 @@
 }
 
 .word-type-badge {
-    background: rgba(88, 166, 255, 0.15);
+    background: rgba(254, 204, 2, 0.15);
     color: var(--primary-accent);
     padding: 0.5rem 1.5rem;
     border-radius: var(--radius-full);

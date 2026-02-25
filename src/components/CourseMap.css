@@ -55,7 +55,7 @@
 }
 
 .level-section:hover:not(.locked) {
-    border-color: rgba(88, 166, 255, 0.25);
+    border-color: rgba(254, 204, 2, 0.25);
 }
 
 .level-section.locked {
@@ -126,7 +126,7 @@
 .module-item:not(.locked):hover {
     transform: translateX(4px);
     background: rgba(22, 27, 34, 0.9);
-    border-color: rgba(88, 166, 255, 0.25);
+    border-color: rgba(254, 204, 2, 0.25);
     box-shadow: var(--shadow-sm);
 }
 
@@ -136,9 +136,9 @@
 }
 
 .module-item.active-module {
-    border-color: rgba(88, 166, 255, 0.4);
+    border-color: rgba(254, 204, 2, 0.4);
     box-shadow: var(--shadow-glow-sm);
-    background: rgba(88, 166, 255, 0.04);
+    background: rgba(254, 204, 2, 0.04);
 }
 
 .module-item.active-module::before {
@@ -174,7 +174,7 @@
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    background: rgba(88, 166, 255, 0.1);
+    background: rgba(254, 204, 2, 0.1);
     color: var(--primary-accent);
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-xs);

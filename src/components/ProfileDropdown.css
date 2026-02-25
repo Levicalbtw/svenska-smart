@@ -47,7 +47,7 @@
     right: 0;
     width: 320px;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(88, 166, 255, 0.2);
+    border: 1px solid rgba(254, 204, 2, 0.2);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     overflow: hidden;
@@ -210,10 +210,10 @@
 }
 
 .badge.current {
-    background: rgba(88, 166, 255, 0.2);
+    background: rgba(254, 204, 2, 0.2);
     color: var(--primary-accent);
-    border-color: rgba(88, 166, 255, 0.4);
-    box-shadow: 0 0 12px rgba(88, 166, 255, 0.2);
+    border-color: rgba(254, 204, 2, 0.4);
+    box-shadow: 0 0 12px rgba(254, 204, 2, 0.2);
 }
 
 .badge.locked {

@@ -146,7 +146,7 @@ export default function AiTutor({ isOpen, onClose }) {
     return (
         <div className="ai-tutor-panel glass-panel animate-fade-in">
             <div className="ai-tutor-header">
-                <h3>🤖 Svenska Tutor</h3>
+                <h3>🤖 Swedish Tutor</h3>
                 <button className="ai-close-btn" onClick={onClose}>
                     <X size={20} />
                 </button>

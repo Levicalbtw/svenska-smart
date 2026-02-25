@@ -194,7 +194,7 @@ export default function LessonInterface({ levelId, moduleId, onBack }) {
                     <div className="dialogue-container" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         {currentItem.lines.map((line, idx) => (
                             <div key={idx} className="dialogue-bubble" style={{
-                                background: idx % 2 === 0 ? 'rgba(88, 166, 255, 0.1)' : 'rgba(255, 255, 255, 0.05)',
+                                background: idx % 2 === 0 ? 'rgba(254, 204, 2, 0.1)' : 'rgba(255, 255, 255, 0.05)',
                                 padding: '1rem 1.5rem',
                                 borderRadius: 'var(--radius-md)',
                                 borderLeft: idx % 2 === 0 ? '4px solid var(--primary-accent)' : '4px solid var(--text-secondary)'

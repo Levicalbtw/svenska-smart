@@ -35,7 +35,7 @@ export default function AuthScreen() {
         <div className="auth-screen">
             <div className="auth-card glass-panel">
                 <h1 className="auth-logo">
-                    Svenska<span style={{ color: '#ffffff' }}>Smart</span> 🇸🇪
+                    Learn Swedish 🇸🇪
                 </h1>
                 <p className="auth-subtitle">
                     {isSignUp ? 'Create your account to start learning Swedish' : 'Sign in to continue your Swedish journey'}
