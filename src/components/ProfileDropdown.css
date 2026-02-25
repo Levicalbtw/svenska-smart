@@ -1,0 +1,244 @@
+.profile-dropdown-container {
+    position: relative;
+}
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.profile-trigger:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-accent), #a78bfa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.chevron {
+    color: var(--text-secondary);
+    transition: transform var(--transition-fast);
+}
+
+.chevron.rotated {
+    transform: rotate(180deg);
+}
+
+.profile-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 320px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: hidden;
+    background: rgba(13, 17, 23, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 0;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+}
+
+.profile-avatar-lg {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-accent), #a78bfa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    min-width: 0;
+}
+
+.profile-email {
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-joined {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+.profile-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 0;
+}
+
+/* Stats Grid */
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 1rem 0.75rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-icon {
+    opacity: 0.8;
+}
+
+.stat-icon.xp {
+    color: #f0b429;
+}
+
+.stat-icon.level {
+    color: #a78bfa;
+}
+
+.stat-icon.modules {
+    color: #3fb950;
+}
+
+.stat-icon.overall {
+    color: var(--primary-accent);
+}
+
+.stat-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Level Progress */
+.profile-level-section {
+    padding: 1rem 1.25rem;
+}
+
+.level-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.level-pct {
+    color: var(--primary-accent);
+    font-weight: 600;
+}
+
+.level-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.level-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-accent), #a78bfa);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.level-detail {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.4rem;
+}
+
+/* Level Badges */
+.level-badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+}
+
+.badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.badge.completed {
+    background: rgba(63, 185, 80, 0.2);
+    color: #3fb950;
+    border-color: rgba(63, 185, 80, 0.4);
+}
+
+.badge.current {
+    background: rgba(88, 166, 255, 0.2);
+    color: var(--primary-accent);
+    border-color: rgba(88, 166, 255, 0.4);
+    box-shadow: 0 0 12px rgba(88, 166, 255, 0.2);
+}
+
+.badge.locked {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Sign Out */
+.profile-signout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.profile-signout:hover {
+    background: rgba(248, 81, 73, 0.1);
+    color: #f85149;
+}
