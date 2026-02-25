@@ -85,8 +85,24 @@ export const CourseProvider = ({ children }) => {
         setProgress(DEFAULT_PROGRESS);
     };
 
+    const resetLevelProgress = (levelId) => {
+        const levelOrder = ['A1', 'A2', 'B1', 'B2', 'C1'];
+        const targetIndex = levelOrder.indexOf(levelId);
+        const currentIndex = levelOrder.indexOf(progress.level);
+
+        // If resetting the current level or a past level, move back to start of that level
+        if (targetIndex <= currentIndex) {
+            setProgress(prev => ({
+                ...prev,
+                level: levelId,
+                module: 1,
+                lesson: 1
+            }));
+        }
+    };
+
     return (
-        <CourseContext.Provider value={{ progress, updateProgress, addXp, resetProgress }}>
+        <CourseContext.Provider value={{ progress, updateProgress, addXp, resetProgress, resetLevelProgress }}>
             {children}
         </CourseContext.Provider>
     );

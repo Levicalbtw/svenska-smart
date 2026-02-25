@@ -1,9 +1,9 @@
 import { useCourse } from '../CourseContext';
 import { courseStructure } from '../data/courseData';
-import { PlayCircle, Lock, CheckCircle, ChevronLeft } from 'lucide-react';
+import { PlayCircle, Lock, CheckCircle, ChevronLeft, RotateCcw } from 'lucide-react';
 
 export default function LevelPage({ levelId, onBack, onStartLesson }) {
-    const { progress } = useCourse();
+    const { progress, resetLevelProgress } = useCourse();
     const levelData = courseStructure[levelId];
 
     const isUnlocked = (lId, mId) => {
@@ -30,6 +30,8 @@ export default function LevelPage({ levelId, onBack, onStartLesson }) {
     const completedCount = modules.filter(m => isCompleted(levelId, m.id)).length;
     const progressPercent = modules.length > 0 ? Math.round((completedCount / modules.length) * 100) : 0;
 
+    const canReset = completedCount > 0;
+
     return (
         <div className="animate-fade-in" style={{ maxWidth: '800px', margin: '0 auto', padding: '1rem' }}>
             <button className="btn btn-secondary" onClick={onBack} style={{ marginBottom: '2rem' }}>
@@ -51,6 +53,34 @@ export default function LevelPage({ levelId, onBack, onStartLesson }) {
                 <div style={{ marginTop: '2rem', height: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', overflow: 'hidden' }}>
                     <div style={{ height: '100%', background: 'var(--secondary-gradient)', width: `${progressPercent}%`, transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)' }}></div>
                 </div>
+
+                {canReset && (
+                    <button
+                        onClick={() => {
+                            if (window.confirm(`Reset all progress for ${levelId}? You'll go back to Module 1 of this level.`)) {
+                                resetLevelProgress(levelId);
+                            }
+                        }}
+                        style={{
+                            marginTop: '1rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.4rem',
+                            background: 'none',
+                            border: 'none',
+                            color: '#ff7b72',
+                            cursor: 'pointer',
+                            fontSize: '0.85rem',
+                            padding: '0.4rem 0',
+                            transition: 'opacity 0.2s',
+                        }}
+                        onMouseOver={e => e.currentTarget.style.opacity = '0.8'}
+                        onMouseOut={e => e.currentTarget.style.opacity = '1'}
+                    >
+                        <RotateCcw size={14} />
+                        Reset {levelId} Progress
+                    </button>
+                )}
             </div>
 
             <div className="modules-list" style={{ marginTop: '3rem' }}>
