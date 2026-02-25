@@ -51,6 +51,48 @@ export const courseStructure = {
                         english: "I also feel good.",
                         parts: ["Jag", "mår", "också", "bra."],
                         note: "'Också' (also) sits right after the verb."
+                    },
+                    {
+                        type: "dialogue",
+                        title: "At the Bus Stop",
+                        lines: [
+                            { speaker: "Lisa", swedish: "Hej! Väntar du också på bussen?", english: "Hi! Are you also waiting for the bus?" },
+                            { speaker: "You", swedish: "Ja, jag väntar på buss nummer tre.", english: "Yes, I'm waiting for bus number three." },
+                            { speaker: "Lisa", swedish: "Jag också! Jag heter Lisa. Vad heter du?", english: "Me too! My name is Lisa. What's your name?" },
+                            { speaker: "You", swedish: "Trevligt! Jag heter Alex. Hur mår du idag?", english: "Nice! My name is Alex. How are you today?" },
+                            { speaker: "Lisa", swedish: "Jag mår bra, men jag är lite trött.", english: "I feel good, but I'm a bit tired." },
+                            { speaker: "You", swedish: "Jag förstår. Det är en lång dag.", english: "I understand. It's a long day." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Ska vi ta en fika?",
+                        english: "Shall we get a coffee (fika)?",
+                        note: "'Fika' is a uniquely Swedish tradition of having coffee and pastries."
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Det låter bra!",
+                        english: "That sounds good!"
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Hur mår du idag?",
+                        english: "How are you today?",
+                        parts: ["Hur", "mår", "du", "idag?"]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Jag mår bra men jag är lite trött.",
+                        english: "I feel good but I'm a bit tired.",
+                        parts: ["Jag", "mår", "bra", "men", "jag", "är", "lite", "trött."],
+                        note: "'Men' (but) connects two contrasting ideas."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Det är en lång dag.",
+                        english: "It is a long day.",
+                        parts: ["Det", "är", "en", "lång", "dag."]
                     }
                 ]
             },
@@ -97,6 +139,37 @@ export const courseStructure = {
                         english: "Often there are many people here.",
                         parts: ["Ofta", "är", "det", "många", "människor", "här."],
                         note: "'Ofta' triggers V2, followed by 'är' (are)."
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Idag ska jag handla mat.",
+                        english: "Today I'm going to buy groceries.",
+                        note: "V2: 'Idag' pushes 'ska' to second position."
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Ibland äter vi middag ute.",
+                        english: "Sometimes we eat dinner out."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Senare ska vi gå på bio.",
+                        english: "Later we are going to go to the cinema.",
+                        parts: ["Senare", "ska", "vi", "gå", "på", "bio."],
+                        note: "'Senare' (Later) is Element 1, 'ska' is Element 2."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Ibland äter jag frukost hemma.",
+                        english: "Sometimes I eat breakfast at home.",
+                        parts: ["Ibland", "äter", "jag", "frukost", "hemma."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Imorgon börjar jag skolan.",
+                        english: "Tomorrow I start school.",
+                        parts: ["Imorgon", "börjar", "jag", "skolan."],
+                        note: "'Imorgon' (Tomorrow) triggers V2 inversion."
                     }
                 ]
             },
@@ -138,6 +211,41 @@ export const courseStructure = {
                         sentence: "Jag vill gärna ha en stor kaffe.",
                         english: "I would like to have a big coffee.",
                         parts: ["Jag", "vill", "gärna", "ha", "en", "stor", "kaffe."]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "Ordering at the Bar",
+                        lines: [
+                            { speaker: "Bartender", swedish: "Hej, vad vill du ha?", english: "Hi, what would you like?" },
+                            { speaker: "You", swedish: "Kan jag få en kopp te och en smörgås?", english: "Can I get a cup of tea and a sandwich?" },
+                            { speaker: "Bartender", swedish: "Vilken sort? Vi har grönt te och svart te.", english: "Which kind? We have green tea and black tea." },
+                            { speaker: "You", swedish: "Grönt te, tack. Och smörgåsen med ost.", english: "Green tea, please. And the sandwich with cheese." },
+                            { speaker: "Bartender", swedish: "Något annat?", english: "Anything else?" },
+                            { speaker: "You", swedish: "Nej tack, det var allt.", english: "No thanks, that was all." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Kan jag få...?",
+                        english: "Can I get...?",
+                        note: "A very polite way to order something."
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Nej tack, det var allt.",
+                        english: "No thanks, that was all."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Kan jag få en kopp te tack?",
+                        english: "Can I get a cup of tea please?",
+                        parts: ["Kan", "jag", "få", "en", "kopp", "te", "tack?"]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Det blir femtio kronor tack.",
+                        english: "That will be fifty kronor thanks.",
+                        parts: ["Det", "blir", "femtio", "kronor", "tack."]
                     }
                 ]
             },
@@ -179,6 +287,39 @@ export const courseStructure = {
                         sentence: "Jag arbetar också i Stockholm.",
                         english: "I also work in Stockholm.",
                         parts: ["Jag", "arbetar", "också", "i", "Stockholm."]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "At a Party",
+                        lines: [
+                            { speaker: "You", swedish: "Hej! Jag heter Alex. Jag är ny här.", english: "Hi! My name is Alex. I'm new here." },
+                            { speaker: "Klara", swedish: "Välkommen! Jag heter Klara. Var bor du?", english: "Welcome! I'm Klara. Where do you live?" },
+                            { speaker: "You", swedish: "Jag bor i Göteborg. Och du?", english: "I live in Gothenburg. And you?" },
+                            { speaker: "Klara", swedish: "Jag bor i Malmö. Vad jobbar du med?", english: "I live in Malmö. What do you work with?" },
+                            { speaker: "You", swedish: "Jag studerar svenska på universitetet.", english: "I study Swedish at the university." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Vad jobbar du med?",
+                        english: "What do you work with?"
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Jag är ny här.",
+                        english: "I'm new here."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Jag studerar svenska på universitetet.",
+                        english: "I study Swedish at the university.",
+                        parts: ["Jag", "studerar", "svenska", "på", "universitetet."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Var bor du någonstans?",
+                        english: "Where do you live?",
+                        parts: ["Var", "bor", "du", "någonstans?"]
                     }
                 ]
             },
@@ -225,6 +366,45 @@ export const courseStructure = {
                         sentence: "Det är onsdag idag.",
                         english: "It is Wednesday today.",
                         parts: ["Det", "är", "onsdag", "idag."]
+                    },
+                    {
+                        type: "theory",
+                        title: "Numbers 11–20",
+                        content: "11 = elva, 12 = tolv, 13 = tretton, 14 = fjorton, 15 = femton, 16 = sexton, 17 = sjutton, 18 = arton, 19 = nitton, 20 = tjugo. From 13 onward, they follow the pattern: digit + 'ton' (like English '-teen')."
+                    },
+                    {
+                        type: "dialogue",
+                        title: "Telling Time",
+                        lines: [
+                            { speaker: "A", swedish: "Vad är klockan?", english: "What time is it?" },
+                            { speaker: "B", swedish: "Klockan är halv tre.", english: "It's half past two." },
+                            { speaker: "A", swedish: "Redan? Jag måste gå klockan kvart över tre.", english: "Already? I have to leave at quarter past three." },
+                            { speaker: "B", swedish: "Du har fortfarande fyrtifem minuter.", english: "You still have forty-five minutes." },
+                            { speaker: "A", swedish: "Bra, då hinner vi ta en fika först!", english: "Good, then we have time to get a coffee first!" }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Vad är klockan?",
+                        english: "What time is it?"
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Klockan är halv tre.",
+                        english: "It's half past two.",
+                        note: "Swedish 'halv tre' means halfway TO three, not half past three!"
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Jag måste gå klockan kvart över tre.",
+                        english: "I have to leave at quarter past three.",
+                        parts: ["Jag", "måste", "gå", "klockan", "kvart", "över", "tre."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Vi ses på lördag klockan tolv.",
+                        english: "We'll meet on Saturday at twelve.",
+                        parts: ["Vi", "ses", "på", "lördag", "klockan", "tolv."]
                     }
                 ]
             },
@@ -302,6 +482,39 @@ export const courseStructure = {
                         sentence: "Det är kallt och det snöar.",
                         english: "It is cold and it is snowing.",
                         parts: ["Det", "är", "kallt", "och", "det", "snöar."]
+                    },
+                    {
+                        type: "theory",
+                        title: "The Four Seasons",
+                        content: "Vår (Spring), Sommar (Summer), Höst (Autumn), Vinter (Winter). Use 'på' before the season: 'på sommaren' (in summer), 'på vintern' (in winter). Seasons are not capitalized in Swedish."
+                    },
+                    {
+                        type: "dialogue",
+                        title: "What's Your Favorite Season?",
+                        lines: [
+                            { speaker: "A", swedish: "Vilken årstid gillar du bäst?", english: "Which season do you like best?" },
+                            { speaker: "B", swedish: "Jag gillar sommaren mest. Det är varmt och ljust.", english: "I like summer most. It's warm and bright." },
+                            { speaker: "A", swedish: "Jag föredrar hösten. Löven blir röda och gula.", english: "I prefer autumn. The leaves turn red and yellow." },
+                            { speaker: "B", swedish: "På våren blommar det överallt.", english: "In spring, flowers bloom everywhere." },
+                            { speaker: "A", swedish: "Och vintern? Den är vacker men kall!", english: "And winter? It's beautiful but cold!" }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Vilken årstid gillar du bäst?",
+                        english: "Which season do you like best?"
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Sommaren är ljus och varm.",
+                        english: "The summer is bright and warm.",
+                        parts: ["Sommaren", "är", "ljus", "och", "varm."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Det blåser mycket idag.",
+                        english: "It's very windy today.",
+                        parts: ["Det", "blåser", "mycket", "idag."]
                     }
                 ]
             },
@@ -336,6 +549,39 @@ export const courseStructure = {
                         sentence: "Jag tar laxen med potatis tack.",
                         english: "I'll take the salmon with potatoes please.",
                         parts: ["Jag", "tar", "laxen", "med", "potatis", "tack."]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "After the Meal",
+                        lines: [
+                            { speaker: "You", swedish: "Det var väldigt gott! Kan vi få notan?", english: "That was very good! Can we get the bill?" },
+                            { speaker: "Servitör", swedish: "Självklart! Ska ni dela notan?", english: "Of course! Will you split the bill?" },
+                            { speaker: "Friend", swedish: "Ja, vi delar. Hälften var.", english: "Yes, we'll split. Half each." },
+                            { speaker: "Servitör", swedish: "Var maten bra?", english: "Was the food good?" },
+                            { speaker: "You", swedish: "Ja, maten var utmärkt! Tack så mycket.", english: "Yes, the food was excellent! Thank you very much." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Kan vi få notan?",
+                        english: "Can we get the bill?"
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Det var väldigt gott!",
+                        english: "That was very tasty!"
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Maten var utmärkt tack så mycket.",
+                        english: "The food was excellent, thank you very much.",
+                        parts: ["Maten", "var", "utmärkt", "tack", "så", "mycket."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Vi delar notan hälften var.",
+                        english: "We split the bill half each.",
+                        parts: ["Vi", "delar", "notan", "hälften", "var."]
                     }
                 ]
             },
@@ -370,6 +616,39 @@ export const courseStructure = {
                         sentence: "Jag tycker om att laga mat.",
                         english: "I like to cook food.",
                         parts: ["Jag", "tycker", "om", "att", "laga", "mat."]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "Talking About Music",
+                        lines: [
+                            { speaker: "A", swedish: "Spelar du något instrument?", english: "Do you play any instrument?" },
+                            { speaker: "B", swedish: "Ja, jag spelar gitarr. Jag övar varje kväll.", english: "Yes, I play guitar. I practice every evening." },
+                            { speaker: "A", swedish: "Vad kul! Jag gillar att lyssna på musik.", english: "How fun! I like to listen to music." },
+                            { speaker: "B", swedish: "Vilken musik tycker du om?", english: "What music do you like?" },
+                            { speaker: "A", swedish: "Jag tycker om svensk pop och ABBA!", english: "I like Swedish pop and ABBA!" }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Jag övar varje kväll.",
+                        english: "I practice every evening."
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Jag gillar att lyssna på musik.",
+                        english: "I like to listen to music."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Jag tycker om att läsa böcker hemma.",
+                        english: "I like to read books at home.",
+                        parts: ["Jag", "tycker", "om", "att", "läsa", "böcker", "hemma."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Spelar du något instrument?",
+                        english: "Do you play any instrument?",
+                        parts: ["Spelar", "du", "något", "instrument?"]
                     }
                 ]
             },
@@ -404,6 +683,39 @@ export const courseStructure = {
                         sentence: "Ursäkta var ligger stationen?",
                         english: "Excuse me, where is the station located?",
                         parts: ["Ursäkta", "var", "ligger", "stationen?"]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "Finding the Pharmacy",
+                        lines: [
+                            { speaker: "You", swedish: "Ursäkta, hur kommer jag till apoteket?", english: "Excuse me, how do I get to the pharmacy?" },
+                            { speaker: "Local", swedish: "Gå rakt fram två kvarter och sväng vänster.", english: "Go straight ahead two blocks and turn left." },
+                            { speaker: "You", swedish: "Ligger det på vänster sida eller höger sida?", english: "Is it on the left side or the right side?" },
+                            { speaker: "Local", swedish: "Det ligger på vänster sida, bredvid banken.", english: "It's on the left side, next to the bank." },
+                            { speaker: "You", swedish: "Tack så mycket för hjälpen!", english: "Thank you so much for the help!" }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Hur kommer jag till...?",
+                        english: "How do I get to...?"
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Tack så mycket för hjälpen!",
+                        english: "Thank you so much for the help!"
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Det tar bara fem minuter att gå dit.",
+                        english: "It only takes five minutes to walk there.",
+                        parts: ["Det", "tar", "bara", "fem", "minuter", "att", "gå", "dit."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Apoteket ligger bredvid banken.",
+                        english: "The pharmacy is located next to the bank.",
+                        parts: ["Apoteket", "ligger", "bredvid", "banken."]
                     }
                 ]
             }
