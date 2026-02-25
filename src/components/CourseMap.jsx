@@ -6,7 +6,7 @@ import LevelPage from './LevelPage';
 import './CourseMap.css';
 
 export default function CourseMap({ onStartLesson }) {
-    const { progress, resetProgress } = useCourse();
+    const { progress } = useCourse();
     const [selectedLevelId, setSelectedLevelId] = useState(null);
 
     const isUnlocked = (levelId) => {
@@ -55,17 +55,6 @@ export default function CourseMap({ onStartLesson }) {
                     <span className="xp-text" style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{progress.xp} XP</span>
                     <div className="progress-badge" style={{ background: 'var(--primary-accent)', padding: '0.2rem 0.8rem', borderRadius: '20px', fontSize: '0.9rem' }}>{progress.level}</div>
                 </div>
-                <button
-                    className="btn btn-secondary"
-                    style={{ fontSize: '0.8rem', padding: '0.5rem 1rem', borderColor: 'rgba(248, 81, 73, 0.3)', color: '#ff7b72' }}
-                    onClick={() => {
-                        if (window.confirm("Are you sure you want to reset all your progress?")) {
-                            resetProgress();
-                        }
-                    }}
-                >
-                    Reset Progress
-                </button>
             </div>
 
             <h1 style={{ marginBottom: '0.5rem', textAlign: 'center', fontSize: '2.5rem', color: '#fff' }}>Course Dashboard</h1>

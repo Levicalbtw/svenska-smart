@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { useCourse } from '../CourseContext';
 import { courseStructure } from '../data/courseData';
-import { User, LogOut, Star, BookOpen, Trophy, TrendingUp, ChevronDown } from 'lucide-react';
+import { RotateCcw, User, LogOut, Star, BookOpen, Trophy, TrendingUp, ChevronDown } from 'lucide-react';
 import './ProfileDropdown.css';
 
 export default function ProfileDropdown() {
     const { user, signOut } = useAuth();
-    const { progress } = useCourse();
+    const { progress, resetProgress } = useCourse();
     const [open, setOpen] = useState(false);
     const ref = useRef(null);
 
@@ -117,6 +117,17 @@ export default function ProfileDropdown() {
                     </div>
 
                     <div className="profile-divider" />
+
+                    {/* Reset Progress */}
+                    <button className="profile-reset" onClick={() => {
+                        if (window.confirm("Are you sure you want to reset all your progress?")) {
+                            resetProgress();
+                            setOpen(false);
+                        }
+                    }}>
+                        <RotateCcw size={16} />
+                        Reset Progress
+                    </button>
 
                     {/* Sign out */}
                     <button className="profile-signout" onClick={() => { signOut(); setOpen(false); }}>
