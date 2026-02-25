@@ -20,7 +20,7 @@ function AppContent() {
     return (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
         <div style={{ textAlign: 'center' }}>
-          <h2 style={{ color: 'var(--primary-accent)', fontSize: '2rem' }}>Learn Swedish 🇸🇪</h2>
+          <h2 style={{ color: 'var(--primary-accent)', fontSize: '2rem' }}>Learn Swedish <span style={{ WebkitTextFillColor: 'initial' }}>🇸🇪</span></h2>
           <p style={{ color: 'var(--text-secondary)' }}>Loading...</p>
         </div>
       </div>
@@ -44,7 +44,7 @@ function AppContent() {
       <div className="app-container">
         <header>
           <div className="logo cursor-pointer" onClick={() => { handleExitLesson(); setCurrentView('course'); }}>
-            Learn Swedish 🇸🇪
+            Learn Swedish <span style={{ WebkitTextFillColor: 'initial' }}>🇸🇪</span>
           </div>
           <nav style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             <button className={`btn ${currentView === 'course' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => { handleExitLesson(); setCurrentView('course'); }}>Course</button>
