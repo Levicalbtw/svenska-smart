@@ -764,6 +764,36 @@ export const courseStructure = {
                         sentence: "Efter jobbet träffade jag en vän.",
                         english: "After work I met a friend.",
                         parts: ["Efter", "jobbet", "träffade", "jag", "en", "vän."]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "A Weekend Trip",
+                        lines: [
+                            { speaker: "A", swedish: "Vad gjorde du förra helgen?", english: "What did you do last weekend?" },
+                            { speaker: "B", swedish: "Jag åkte till Göteborg med min familj.", english: "I went to Gothenburg with my family." },
+                            { speaker: "A", swedish: "Vad roligt! Vad såg ni där?", english: "How fun! What did you see there?" },
+                            { speaker: "B", swedish: "Vi besökte Liseberg och åt god mat på en restaurang.", english: "We visited Liseberg and ate good food at a restaurant." },
+                            { speaker: "A", swedish: "Hur länge stannade ni?", english: "How long did you stay?" },
+                            { speaker: "B", swedish: "Vi stannade i två dagar och sov på hotell.", english: "We stayed for two days and slept at a hotel." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Vad gjorde du förra helgen?",
+                        english: "What did you do last weekend?"
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Vi besökte Liseberg och åt god mat.",
+                        english: "We visited Liseberg and ate good food.",
+                        parts: ["Vi", "besökte", "Liseberg", "och", "åt", "god", "mat."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Förra veckan köpte jag en ny bok.",
+                        english: "Last week I bought a new book.",
+                        parts: ["Förra", "veckan", "köpte", "jag", "en", "ny", "bok."],
+                        note: "V2: 'Förra veckan' is Element 1, 'köpte' is Element 2."
                     }
                 ]
             },
@@ -992,6 +1022,36 @@ export const courseStructure = {
                         english: "He is happy because he has already eaten.",
                         parts: ["Han", "är", "glad", "eftersom", "han", "redan", "har", "ätit."],
                         note: "'redan' jumps before 'har' in the subclause."
+                    },
+                    {
+                        type: "dialogue",
+                        title: "Studying for an Exam",
+                        lines: [
+                            { speaker: "A", swedish: "Jag kan inte gå ut eftersom jag inte har pluggat klart.", english: "I can't go out because I haven't finished studying." },
+                            { speaker: "B", swedish: "Jag vet att du alltid pluggar i sista minuten!", english: "I know that you always study at the last minute!" },
+                            { speaker: "A", swedish: "Det stämmer, men om jag inte klarar provet blir mina föräldrar arga.", english: "That's true, but if I don't pass the exam my parents will be angry." },
+                            { speaker: "B", swedish: "Jag hjälper dig om du inte förstår allt.", english: "I'll help you if you don't understand everything." },
+                            { speaker: "A", swedish: "Tack! Jag vet att du redan har klarat kursen.", english: "Thanks! I know that you've already passed the course." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "...eftersom jag inte har pluggat klart.",
+                        english: "...because I haven't finished studying.",
+                        note: "BIFF: 'inte' before 'har' in the 'eftersom' subclause."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Jag stannar hemma om det inte slutar regna.",
+                        english: "I'm staying home if it doesn't stop raining.",
+                        parts: ["Jag", "stannar", "hemma", "om", "det", "inte", "slutar", "regna."],
+                        note: "BIFF: 'inte' goes before 'slutar' in the 'om' subclause."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Hon säger att hon aldrig dricker kaffe.",
+                        english: "She says that she never drinks coffee.",
+                        parts: ["Hon", "säger", "att", "hon", "aldrig", "dricker", "kaffe."]
                     }
                 ]
             },
@@ -1171,6 +1231,34 @@ export const courseStructure = {
                         sentence: "Beslutet togs av kommunen.",
                         english: "The decision was made by the municipality.",
                         parts: ["Beslutet", "togs", "av", "kommunen."]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "Discussing City Changes",
+                        lines: [
+                            { speaker: "A", swedish: "Har du sett att den gamla skolan rivs?", english: "Have you seen that the old school is being demolished?" },
+                            { speaker: "B", swedish: "Ja, det sägs att ett nytt kulturhus ska byggas där.", english: "Yes, it's said that a new cultural center will be built there." },
+                            { speaker: "A", swedish: "Pengarna finansieras av staten.", english: "The money is funded by the state." },
+                            { speaker: "B", swedish: "Planen godkändes redan förra året.", english: "The plan was approved already last year." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Det sägs att...",
+                        english: "It is said that...",
+                        note: "Impersonal passive — very common in Swedish news and conversations."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Maten lagas av kocken varje dag.",
+                        english: "The food is cooked by the chef every day.",
+                        parts: ["Maten", "lagas", "av", "kocken", "varje", "dag."]
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Huset byggdes på artonhundratalet.",
+                        english: "The house was built in the 1800s.",
+                        parts: ["Huset", "byggdes", "på", "artonhundratalet."]
                     }
                 ]
             },
@@ -1307,6 +1395,27 @@ export const courseStructure = {
                         sentence: "Vi slår två flugor i en smäll om vi väntar.",
                         english: "We kill two birds with one stone if we wait.",
                         parts: ["Vi", "slår", "två", "flugor", "i", "en", "smäll", "om", "vi", "väntar."]
+                    },
+                    {
+                        type: "dialogue",
+                        title: "At the Office",
+                        lines: [
+                            { speaker: "A", swedish: "Vi måste bita i det sura äpplet och berätta för chefen.", english: "We have to bite the bullet and tell the boss." },
+                            { speaker: "B", swedish: "Ja, vi kan inte köra huvudet i sanden längre.", english: "Yes, we can't bury our heads in the sand any longer." },
+                            { speaker: "A", swedish: "Det är bättre att ta tjuren vid hornen.", english: "It's better to take the bull by the horns." },
+                            { speaker: "B", swedish: "Du har rent mjöl i påsen, så du har inget att oroa dig för.", english: "You have a clear conscience, so you have nothing to worry about." }
+                        ]
+                    },
+                    {
+                        type: "chunking",
+                        chunk: "Ta tjuren vid hornen.",
+                        english: "Take the bull by the horns (face the problem head-on)."
+                    },
+                    {
+                        type: "grammar_builder",
+                        sentence: "Vi måste bita i det sura äpplet.",
+                        english: "We have to bite the bullet (bite the sour apple).",
+                        parts: ["Vi", "måste", "bita", "i", "det", "sura", "äpplet."]
                     }
                 ]
             },
