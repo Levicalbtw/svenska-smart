@@ -20,7 +20,7 @@ export default function AuthScreen() {
         try {
             if (isSignUp) {
                 await signUp(email, password);
-                setMessage('Check your email to confirm your account!');
+                setMessage('Check your email to verify your account — you\'ll be logged in automatically!');
             } else {
                 await signIn(email, password);
             }
