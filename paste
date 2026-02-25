@@ -1,0 +1,3 @@
+Paste into terminal if I want to push to github
+
+git add -A && git commit -m "your message" && git push
