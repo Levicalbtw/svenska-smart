@@ -82,7 +82,7 @@ export const CourseProvider = ({ children }) => {
     };
 
     const resetProgress = () => {
-        setProgress(DEFAULT_PROGRESS);
+        setProgress(prev => ({ ...DEFAULT_PROGRESS, xp: prev.xp }));
     };
 
     const resetLevelProgress = (levelId) => {
