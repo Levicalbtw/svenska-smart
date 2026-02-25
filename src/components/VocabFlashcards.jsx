@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { allVocab } from '../data/vocabData';
-import { ArrowRight, RotateCw, RefreshCcw } from 'lucide-react';
+import { useCourse } from '../CourseContext';
+import { ArrowRight, RotateCw, RefreshCcw, Star } from 'lucide-react';
 import './VocabFlashcards.css';
 
 export default function VocabFlashcards() {
+    const { addXp } = useCourse();
     const [deck, setDeck] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
-    const [stats, setStats] = useState({ known: 0, learning: 0 });
+    const [stats, setStats] = useState({ known: 0, learning: 0, xpEarned: 0 });
     const [sessionComplete, setSessionComplete] = useState(false);
 
     // Initialize and shuffle deck on mount
@@ -22,7 +24,7 @@ export default function VocabFlashcards() {
         setDeck(shuffled);
         setCurrentIndex(0);
         setIsFlipped(false);
-        setStats({ known: 0, learning: 0 });
+        setStats({ known: 0, learning: 0, xpEarned: 0 });
         setSessionComplete(false);
     };
 
@@ -38,7 +40,8 @@ export default function VocabFlashcards() {
         let nextDeckLength = deck.length;
 
         if (known) {
-            setStats(prev => ({ ...prev, known: prev.known + 1 }));
+            addXp(5);
+            setStats(prev => ({ ...prev, known: prev.known + 1, xpEarned: prev.xpEarned + 5 }));
         } else {
             setStats(prev => ({ ...prev, learning: prev.learning + 1 }));
             // Put the missed word back at the end of the deck
@@ -66,7 +69,10 @@ export default function VocabFlashcards() {
         return (
             <div className="flashcard-container animate-fade-in" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', paddingTop: '4rem' }}>
                 <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--primary-accent)' }}>Session Complete!</h2>
-                <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>You made {deck.length} reviews to finish the session.</p>
+                <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>You made {deck.length} reviews to finish the session.</p>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '2rem', fontSize: '1.3rem', color: 'var(--primary-accent)', fontWeight: 'bold' }}>
+                    <Star size={22} fill="var(--primary-accent)" /> +{stats.xpEarned} XP earned
+                </div>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '3rem' }}>
                     <div className="glass-panel" style={{ padding: '1.5rem', width: '150px', borderRadius: 'var(--radius-md)' }}>
                         <div style={{ fontSize: '2rem', color: '#2ea043', fontWeight: 'bold' }}>{stats.known}</div>
@@ -89,9 +95,14 @@ export default function VocabFlashcards() {
     return (
         <div className="flashcard-container animate-fade-in">
             <h1 style={{ textAlign: 'center', marginBottom: '1rem' }}>Spaced Retrieval Practice</h1>
-            <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                Card {currentIndex + 1} of {deck.length}
-            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem' }}>
+                <span style={{ color: 'var(--text-secondary)' }}>
+                    Card {currentIndex + 1} of {deck.length}
+                </span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--primary-accent)', fontWeight: 'bold', fontSize: '0.95rem' }}>
+                    <Star size={16} fill="var(--primary-accent)" /> {stats.xpEarned} XP
+                </span>
+            </div>
 
             <div className="flashcard-wrapper" onClick={handleFlip}>
                 <div className={`flashcard ${isFlipped ? 'flipped' : ''}`}>
